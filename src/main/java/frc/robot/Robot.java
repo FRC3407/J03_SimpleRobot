@@ -15,6 +15,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
+    m_rightMotor.setInverted(true);
   }
 
   /**
@@ -57,8 +58,8 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void teleopPeriodic() {
-    double speedLeft = xboxController.getRawAxis(1);
-    double speedRight = xboxController.getRawAxis(3) * -1;
+    double speedLeft = xboxController.getRawAxis(1) * -1;
+    double speedRight = xboxController.getRawAxis(5) * -1;
     m_leftMotor.set(speedLeft);
     m_rightMotor.set(speedRight);
   }
